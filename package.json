@@ -1,0 +1,41 @@
+{
+  "name": "template-nodejs",
+  "version": "1.2.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production babel-node ./app/index.js",
+    "dev": "NODE_ENV=development babel-node ./app/index.js",
+    "crawl": "NODE_ENV=development babel-node ./scripts/crawl.js",
+    "lint": "eslint .",
+    "jscpd": "jscpd -t 5 -f javascript app",
+    "precommit": "npm run -s lint && npm run -s jscpd",
+    "audit": "npm audit --registry https://registry.npmjs.org/ --json | npm-audit-helper --prod-only",
+    "clean:log": "rm -rf logs"
+  },
+  "keywords": [],
+  "author": "Nguyen Dang Quynh",
+  "license": "ISC",
+  "dependencies": {
+    "amqp-connection-manager": "^3.2.0",
+    "amqplib": "^0.5.6",
+    "cli-progress": "^3.8.2",
+    "cron": "^1.8.2",
+    "geolib": "^3.3.1",
+    "mysql2": "^2.1.0",
+    "puppeteer": "^3.1.0",
+    "sequelize": "^5.21.11",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "npm-audit-helper": "^2.3.20",
+    "jscpd": "^3.3.0-rc.8",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}
